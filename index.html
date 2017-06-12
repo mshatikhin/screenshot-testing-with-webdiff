@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-4x3.css">
+</head>
+<body class="shower list black">
+
+<style>
+    body, .shower, .slide h2 {
+        color: #fff;
+    }
+
+    body, .shower .black, .shower.full {
+        background-color: #222;
+    }
+</style>
+
+
+<style>
+    .active.fromFadeImage {
+        animation-name: fromFade;
+        animation-duration: 0.6s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes fromFade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+
+    }
+</style>
+
+<header class="caption">
+    <h1>Скриншотное тестирование с использованием webdiff</h1>
+    <p>Автор: Титаренко Дмитрий (СКБ Контур 2017)</p>
+</header>
+
+<section class="slide black" id="cover">
+    <div class="wrapper">
+        <h2>webdiff</h2>
+        <div class="author">Титаренко Дмитрий</div>
+    </div>
+    <style>
+        #cover .wrapper {
+            position: absolute;
+            top: 50%;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            left: 0;
+        }
+
+        #cover .wrapper h2 {
+            margin-bottom: 0;
+            font-size: 96px;
+        }
+
+        #cover .wrapper .author {
+            font-size: 28px;
+        }
+    </style>
+</section>
+
+<section class="slide black">
+    <h2>Метод пристального взгляда</h2>
+    <div>
+        <img src="pictures/focus_1.png" class="place left bottom" height="560"/>
+        <img src="pictures/focus.png" class="place left bottom next fromFadeImage" height="560"/>
+        <img src="pictures/vr.png" class="place right bottom" style="right: -200px;"/>
+    </div>
+</section>
+
+<style>
+    .active.fromRightImage {
+        animation-name: fromRightAnimation;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes fromRightAnimation {
+        from {
+            transform: translateX(600px)
+        }
+
+        to {
+            transform: translateX(0)
+        }
+
+    }
+</style>
+
+<section class="slide black">
+    <h2>Wish list</h2>
+    <ul>
+        <li>Полуавтоматический инструмент предрелизной проверки</li>
+        <li>Возможность проверить перед push’ем, что ничего не сломалось</li>
+        <li>TeamCity, агенты, сломанные тесты…</li>
+        <li>…
+        <li>Релиз близко!</li>
+    </ul>
+    <img src="./pictures/relese_is_comming.png" class="fromRightImage place right bottom next" height="400"/>
+</section>
+
+<section class="slide black">
+    <h2>WebDiff</h2>
+    <img src="pictures/webdiff.png" class="place left bottom" height="540" style="bottom: 40px"/>
+    <img src="pictures/webdiff_focus.png" class="place right bottom next fromFadeImage" height="560" style="bottom: 40px"/>
+</section>
+
+<section class="slide black">
+    <h2>WebDiff</h2>
+    <img src="pictures/webdiff_example.png" class="place left bottom" height="540" style="bottom: 40px"/>
+</section>
+
+<section class="slide black">
+    <h2>De facto</h2>
+    <ul>
+        <li>Поддержка Firefox, Chrome</li>
+        <li>Скриншоты страницы целиком (вертикальный скроллинг)</li>
+        <li>Изменение размеров окна и эмуляция мобильных устройств</li>
+        <li>Ожидание загрузки динамического контента</li>
+        <li>Cookies, подключение произвольных CSS / JS [WebExtension]</li>
+        <li>Просмотр/модификация HTTP-заголовков [WebExtension]</li>
+        <li>Формирование HTML-отчета для артефактов TeamCity</li>
+    </ul>
+</section>
+
+<style>
+    .slide #diff_table td {
+        padding: 0;
+        margin: 0;
+    }
+
+    #diff_table td {
+        vertical-align: top;
+    }
+</style>
+
+<section class="slide black">
+    <h2>Pros et Cons</h2>
+    <table id="diff_table">
+        <tbody>
+        <tr>
+            <td><img src="pictures/webdiff_plus.png" width="300" class="next fromFadeImage"/></td>
+            <td><img src="pictures/webdiff_minus.png" width="300" class="next fromFadeImage"/></td>
+            <td><img src="pictures/webdiff_w.png" width="300" class="next fromFadeImage"/></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="slide black">
+    <h2>Live</h2>
+    <video src="./pictures/video.mp4" autoplay controls style="height: 550px;"></video>
+</section>
+
+<section class="slide black">
+    <h2>Links</h2>
+    <div>
+        <a target="_blank" href="//github.com/dscheg/webdiff">github.com/dscheg/webdiff</a>
+    </div>
+    <div>
+        <a target="_blank" href="//github.com/bslatkin/dpxdt">github.com/bslatkin/dpxdt</a> (Python, PhantomJS,
+        ImageMagick)
+    </div>
+    <div>
+        <a target="_blank" href="//github.com/yandex-qatools/ashot">github.com/yandex-qatools/ashot</a> (Yandex
+        screenshot lib, Java)
+    </div>
+    <img src="pictures/head_zhdun.png" height="152" width="320" class="place right bottom"/>
+</section>
+
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<!--<div class="progress"></div>-->
+<script src="shower/shower.min.js"></script>
+<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
