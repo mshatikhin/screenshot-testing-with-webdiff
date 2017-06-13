@@ -27,6 +27,11 @@
         animation-timing-function: linear;
     }
 
+    .slide ul > li:lang(ru)::before {
+        content: '☗';
+        transform: rotate(90deg);
+    }
+
     @keyframes fromFade {
         from {
             opacity: 0;
@@ -40,9 +45,14 @@
 </style>
 
 <header class="caption">
-    <h1>Скриншотное тестирование с использованием webdiff</h1>
+    <h1>Пиксель Шрёдингера</h1>
     <p>Автор: Титаренко Дмитрий (СКБ Контур 2017)</p>
 </header>
+
+<section class="slide black">
+    <h2 class="cover">Пиксель Шрёдингера</h2>
+    <img src="pictures/cover.jpg" class="cover"/>
+</section>
 
 <section class="slide black" id="cover">
     <div class="wrapper">
@@ -73,9 +83,9 @@
 <section class="slide black">
     <h2>Метод пристального взгляда</h2>
     <div>
-        <img src="pictures/focus_1.png" class="place left bottom" height="560"/>
-        <img src="pictures/focus.png" class="place left bottom next fromFadeImage" height="560"/>
-        <img src="pictures/vr.png" class="place right bottom" style="right: -200px;"/>
+        <img src="pictures/focus_1.png" class="place bottom" height="560" style="padding-bottom:40px"/>
+        <img src="pictures/focus.png" class="place bottom next fromFadeImage" height="560" style="padding-bottom:40px"/>
+        <img src="pictures/vr.png" class="place right bottom" style="zoom:0.8"/>
     </div>
 </section>
 
@@ -103,22 +113,28 @@
     <ul>
         <li>Полуавтоматический инструмент предрелизной проверки</li>
         <li>Возможность проверить перед push’ем, что ничего не сломалось</li>
-        <li>TeamCity, агенты, сломанные тесты…</li>
+        <li style="text-decoration:line-through;">TeamCity, агенты, сломанные тесты…</li>
         <li>…
         <li>Релиз близко!</li>
     </ul>
-    <img src="./pictures/relese_is_comming.png" class="fromRightImage place right bottom next" height="400"/>
+    <img src="./pictures/relese_is_comming.png" class="fromRightImage place right bottom next" height="400"
+         style="padding:0 40px 40px 0"/>
 </section>
 
 <section class="slide black">
     <h2>WebDiff</h2>
-    <img src="pictures/webdiff.png" class="place left bottom" height="540" style="bottom: 40px"/>
-    <img src="pictures/webdiff_focus.png" class="place right bottom next fromFadeImage" height="560" style="bottom: 40px"/>
+    <img src="pictures/webdiff.png" class="place left" width="100%" style="margin-top:20px;padding:40px"/>
 </section>
 
 <section class="slide black">
     <h2>WebDiff</h2>
-    <img src="pictures/webdiff_example.png" class="place left bottom" height="540" style="bottom: 40px"/>
+    <!--img class="cover" src="pictures/dark_eyes.png" alt="Cover"-->
+    <img src="pictures/webdiff_focus.png" class="place bottom" width="100%" style="bottom:80px"/>
+</section>
+
+<section class="slide black">
+    <h2>WebDiff</h2>
+    <img src="pictures/webdiff_example.png" class="place left bottom" height="540" style="left:40px;bottom: 40px"/>
 </section>
 
 <section class="slide black">
@@ -128,8 +144,8 @@
         <li>Скриншоты страницы целиком (вертикальный скроллинг)</li>
         <li>Изменение размеров окна и эмуляция мобильных устройств</li>
         <li>Ожидание загрузки динамического контента</li>
-        <li>Cookies, подключение произвольных CSS / JS [WebExtension]</li>
-        <li>Просмотр/модификация HTTP-заголовков [WebExtension]</li>
+        <li>Cookies, подключение произвольных CSS / JS <span style="color:#777">[WebExtension]</span></li>
+        <li>Просмотр/модификация HTTP-заголовков <span style="color:#777">[WebExtension]</span></li>
         <li>Формирование HTML-отчета для артефактов TeamCity</li>
     </ul>
 </section>
@@ -160,23 +176,25 @@
 
 <section class="slide black">
     <h2>Live</h2>
-    <video src="./pictures/video.mp4" autoplay controls style="height: 550px;"></video>
+    <video src="./pictures/video.mp4" class="place left bottom" autoplay loop controls
+           style="width:100%;padding:0 40px 40px 40px"></video>
 </section>
 
 <section class="slide black">
     <h2>Links</h2>
-    <div>
-        <a target="_blank" href="//github.com/dscheg/webdiff">github.com/dscheg/webdiff</a>
-    </div>
-    <div>
-        <a target="_blank" href="//github.com/bslatkin/dpxdt">github.com/bslatkin/dpxdt</a> (Python, PhantomJS,
-        ImageMagick)
-    </div>
-    <div>
-        <a target="_blank" href="//github.com/yandex-qatools/ashot">github.com/yandex-qatools/ashot</a> (Yandex
-        screenshot lib, Java)
-    </div>
-    <img src="pictures/head_zhdun.png" height="152" width="320" class="place right bottom"/>
+    <ul>
+        <li>webdiff<br/>
+            <a target="_blank" href="//github.com/dscheg/webdiff">github.com/dscheg/webdiff</a>
+        </li>
+        <li style="margin-top:40px">dpxdt (Python, PhantomJS, ImageMagick)<br/>
+            <a target="_blank" href="//github.com/bslatkin/dpxdt">github.com/bslatkin/dpxdt</a>
+        </li>
+        <li style="margin-top:40px">ashot (Yandex screenshot lib, Java)<br/>
+            <a target="_blank" href="//github.com/yandex-qatools/ashot">github.com/yandex-qatools/ashot</a>
+        </li>
+    </ul>
+    <img src="pictures/head_zhdun.png" height="152" width="320" class="place right bottom"
+         style="margin:0 80px 40px 0;zoom:0.75"/>
 </section>
 
 <!--
